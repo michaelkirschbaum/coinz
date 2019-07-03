@@ -1,3 +1,6 @@
+const path = require('path');
+const webpack = require('webpack');
+
 module.exports = {
   module: {
     rules: [
@@ -8,5 +11,12 @@ module.exports = {
           }
       }
     ]
-  }
+  },
+  devServer: {
+    contentBase: path.join(__dirname, "public/"),
+    port: 3000,
+    publicPath: "http://localhost:3000/dist/",
+    hot: true
+  },
+  plugins: [new webpack.HotModuleReplacementPlugin()]
 };
