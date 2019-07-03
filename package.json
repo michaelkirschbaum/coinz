@@ -1,0 +1,7 @@
+{
+  "name": "jobcoin",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Michael Kirschbaum",
+  "license": "MIT"
+}
