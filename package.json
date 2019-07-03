@@ -5,7 +5,8 @@
   "author": "Michael Kirschbaum",
   "license": "MIT",
   "scripts": {
-    "build": "webpack --mode development"
+    "build": "webpack --mode development",
+    "start": "webpack-dev-server"
   },
   "dependencies": {
     "react": "^16.8.6",
@@ -17,6 +18,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
     "webpack": "^4.35.2",
-    "webpack-cli": "^3.3.5"
+    "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "^3.7.2"
   }
 }
