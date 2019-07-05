@@ -2,9 +2,23 @@
 import React, { useState } from 'react'
 import { css, jsx } from '@emotion/core'
 
+const API_URL = 'https://jobcoin.gemini.com/customary/api' // TODO: remove
+const route = '/transactions'
+
 const Send = () => {
   const [sendAddress, setSendAddress] = useState('')
   const [amount, setAmount] = useState('')
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    try {
+      const result = await fetch(API_URL, {
+        method: 'POST',
+      })
+    } catch (error) {
+      console.log(error)
+    }
+    alert('Transaction submitted.')
+  }
 
   return (
     <div
@@ -13,7 +27,7 @@ const Send = () => {
       `}
     >
       <div>Send Jobcoin</div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>
           Destination Address
           <input

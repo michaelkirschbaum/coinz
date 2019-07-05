@@ -13,4 +13,12 @@ describe('Header', () => {
   it('should render account address', () => {
     expect(false).toBe(true)
   })
+
+  it('should display whether user is signed in', () => {
+    expect(false).toBe(true)
+  })
+
+  it('should sign out user when clicked', () => {
+    expect(false).toBe(true)
+  })
 })

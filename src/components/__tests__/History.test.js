@@ -1,5 +1,5 @@
 import React from 'react'
-import {shallow} from 'enzyme/build';
+import { shallow } from 'enzyme/build';
 import History from 'components/History';
 
 describe('History', () => {
@@ -10,7 +10,7 @@ describe('History', () => {
     expect(history).toMatchSnapshot()
   })
 
-  it('should render history', () => {
+  it('should display history', () => {
     expect(false).toBe(true)
   })
 })

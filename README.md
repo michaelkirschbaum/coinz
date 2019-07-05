@@ -1,6 +1,6 @@
-#jobcoin
+# Jobcoin
 
-## tets
+## test
 
     yarn test
 

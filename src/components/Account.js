@@ -4,10 +4,11 @@ import PropTypes from 'prop-types'
 import Send from 'components/Send'
 import History from 'components/History'
 import { css, jsx } from '@emotion/core'
-import { api } from '../constants'
+
+const API_URL = 'https://jobcoin.gemini.com/customary/api' // TODO: remove
 
 const Account = ({ accountID }) => {
-  const [balance, setBalance] = useState(null)
+  const [balance, setBalance] = useState('')
   const [error, setError] = useState(false)
 
   useEffect(() => {
@@ -16,7 +17,7 @@ const Account = ({ accountID }) => {
     {/* fetch jobcoin balance */}
     const fetchData = async () => {
       try {
-        const result = await fetch(api + '/addresses/' + accountID)
+        const result = await fetch(API_URL + '/addresses/' + accountID)
         const data = await result.json()
         setBalance(data.balance)
       } catch (error) {
@@ -42,6 +43,10 @@ const Account = ({ accountID }) => {
       <History balance={balance} />
     </>
   )
+}
+
+Account.defaultProps = {
+  accountID: 'Alice',
 }
 
 Account.propTypes = {

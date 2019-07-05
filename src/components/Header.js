@@ -2,11 +2,13 @@
 import React from 'react'
 import { css, jsx } from '@emotion/core'
 
-const Header = () => (
+const Header = ({ user, isAuthenticated }) => (
   <>
-    <div>User</div>
-    <div>Sign Out</div>
-    <button />
+    <div css={css``}>{user}</div>
+    {isAuthenticated
+      ? <div>Signed In</div>
+      : null}
+    <button>Sign Out</button>
   </>
 );
  export default Header

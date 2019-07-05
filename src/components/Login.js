@@ -4,11 +4,14 @@ import { css, jsx } from '@emotion/core'
 
 const Login = () => {
   const [address, setAddress] = useState('')
+  const handleSubmit = (event) => {
+    event.preventDefault()
+  }
 
   return (
-    <>
+    <div css={css``}>
       <div>Sign In</div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>
           Jobcoin Address
           <input
@@ -20,7 +23,7 @@ const Login = () => {
         </label>
         <input type='submit' value='Sign In' />
       </form>
-    </>
+    </div>
   )
 }
 

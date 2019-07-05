@@ -1,1 +1,0 @@
-export const api = 'https://jobcoin.gemini.com/customary/api'
