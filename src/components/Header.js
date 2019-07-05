@@ -1,6 +1,6 @@
 import React from 'react'
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core's
+import { css, jsx } from '@emotion/core'
 
 const Header = () => (
   <React.Fragment>

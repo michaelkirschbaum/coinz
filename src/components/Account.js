@@ -3,32 +3,45 @@ import Send from 'components/Send'
 import History from 'components/History'
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
+import { api_url } from '../constants'
 
-const url = 'https://jobcoin.gemini.com/customary/api'
 const account = '1234'
 
 const Account = () => {
   const [balance, setBalance] = useState(null)
+  const [error, setError] = useState(false)
 
   useEffect(() => {
+    setError(false)
+
+    {/* fetch jobcoin balance */}
     const fetchData = async () => {
-      const result = await fetch(url + '/addresses/' + account)
-      const data = await result.json()
-      setBalance(data.balance)
+      try {
+        const result = await fetch(api_url + '/addresses/' + account)
+        const data = await result.json()
+        setBalance(data.balance)
+      } catch (error) {
+        setError(true)
+      }
     }
 
     fetchData()
-  }, [account])
+  }, [])
 
   return (
     <React.Fragment>
       <div
-        css={css``}
+        css={css`
+          display: grid;
+        `}
       >
-        {balance}
+        Jobcoin Balance<br></br>
+        {error
+          ? <div>Unable to get balance...</div>
+          : balance}
       </div>
       <Send />
-      <History />
+      <History balance={balance} />
     </React.Fragment>
   )
 }

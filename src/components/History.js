@@ -3,7 +3,7 @@ import React from 'react'
 import { css, jsx } from '@emotion/core'
 
 const History = () => (
-  <div></div>
+  <div css={css``}></div>
 )
 
 export default History

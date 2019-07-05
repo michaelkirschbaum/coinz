@@ -12,10 +12,19 @@ describe('Account', () => {
     expect(account).toMatchSnapshot()
   })
 
-  it('should display balance', () => {
+  it('should render balance', () => {
     const account = shallow(
       <Account />,
     )
+    expect(false).toBe(true)
+  })
+
+  it('should update balance', () => {
+    expect(false).toBe(true)
+  })
+
+  it('should show error when balance request fails', () => {
+    expect(false).toBe(true)
   })
 
   it('should render Send widget', () => {
