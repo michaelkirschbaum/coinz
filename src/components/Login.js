@@ -3,14 +3,23 @@ import React, { useState } from 'react'
 import { css, jsx } from '@emotion/core'
 
 const Login = () => {
-  const address = useState(null)
+  const [address, setAddress] = useState('')
 
   return (
     <>
       <div>Sign In</div>
-      <div>Jobcoin Address</div>
-      <input />
-      <button />
+      <form>
+        <label>
+          Jobcoin Address
+          <input
+            type='text'
+            name='address'
+            onChange={e => setAddress(e.target.value)}
+            required
+          />
+        </label>
+        <input type='submit' value='Sign In' />
+      </form>
     </>
   )
 }

@@ -1,52 +1,41 @@
 /** @jsx jsx */
-import React from 'react'
+import React, { useState } from 'react'
 import { css, jsx } from '@emotion/core'
 
-class Send extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      address: '',
-      amount: '',
-    }
+const Send = () => {
+  const [sendAddress, setSendAddress] = useState('')
+  const [amount, setAmount] = useState('')
 
-    this.handleChange = this.handleChange.bind(thish)
-    this.handleSubmit = this.handleSubmit.bind(this)
-  }
-
-  handleChange(event) {
-    this.setState({
-      address: event.target.address,
-      amount: event.target.amount,
-    })
-  }
-
-  handleSubmit(event) {
-    event.preventDefault()
-  }
-
-  render() {
-    return (
-      <div
-        css={css`
-        
-        `}
-      >
-        <div>Send Jobcoin</div>
-        <form>
-          <label>
-            Destination Address
-            <input type='text' name='address' />
-          </label>
-          <label>
-            Amount
-            <input type='text' name='amout' />
-          </label>
-          <input type='submit' value='Send' />
-        </form>
-      </div>
-    )
-  }
+  return (
+    <div
+      css={css`
+        display: grid;
+      `}
+    >
+      <div>Send Jobcoin</div>
+      <form>
+        <label>
+          Destination Address
+          <input
+            type='text'
+            name='address'
+            onChange={e => setSendAddress(e.target.value)}
+            required
+          />
+        </label>
+        <label>
+          Amount
+          <input
+            type='text'
+            name='amout'
+            onChange={e => setAmount(e.target.value)}
+            required
+          />
+        </label>
+        <input type='submit' value='Send' />
+      </form>
+    </div>
+  )
 }
 
 export default Send
