@@ -5,8 +5,8 @@ import {
   Redirect,
 } from 'react-router-dom'
 import { hot } from 'react-hot-loader'
-import Login from './Login/Login';
-import Account from './Account/Account'
+import Login from 'components/Login';
+import Account from 'components/Account'
 
 const ProtectedRoute = ({ path, component: Component, auth }) => (
   <Route

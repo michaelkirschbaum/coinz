@@ -7,7 +7,6 @@ describe('App', () => {
     const app = shallow(
       <App />,
     )
-
     expect(app).toMatchSnapshot()
   })
 })
