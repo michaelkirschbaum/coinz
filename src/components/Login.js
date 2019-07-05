@@ -1,12 +1,14 @@
-import React from 'react'
 /** @jsx jsx */
+import React from 'react'
 import { css, jsx } from '@emotion/core'
 
 const Login = () => (
-  <React.Fragment>
+  <>
     <div>Sign In</div>
+    <div>Jobcoin Address</div>
     <input />
-  </React.Fragment>
+    <button />
+  </>
 )
 
 export default Login

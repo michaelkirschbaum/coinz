@@ -1,13 +1,12 @@
+/** @jsx jsx */
 import React, { useState, useEffect } from 'react'
 import Send from 'components/Send'
 import History from 'components/History'
-/** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-import { api_url } from '../constants'
-
-const account = '1234'
+import { api } from '../constants'
 
 const Account = () => {
+  const account = '1234' // TODO: remove value
   const [balance, setBalance] = useState(null)
   const [error, setError] = useState(false)
 
@@ -17,32 +16,31 @@ const Account = () => {
     {/* fetch jobcoin balance */}
     const fetchData = async () => {
       try {
-        const result = await fetch(api_url + '/addresses/' + account)
+        const result = await fetch(api + '/addresses/' + account)
         const data = await result.json()
         setBalance(data.balance)
       } catch (error) {
         setError(true)
       }
     }
-
     fetchData()
   }, [])
 
   return (
-    <React.Fragment>
+    <>
       <div
         css={css`
           display: grid;
         `}
       >
-        Jobcoin Balance<br></br>
+        <div>Jobcoin Balance</div>
         {error
           ? <div>Unable to get balance...</div>
           : balance}
       </div>
       <Send />
       <History balance={balance} />
-    </React.Fragment>
+    </>
   )
 }
 

@@ -9,4 +9,8 @@ describe('App', () => {
     )
     expect(app).toMatchSnapshot()
   })
+
+  it('should render login when not authenticated', () => {
+    expect(false).toBe(true)
+  })
 })

@@ -9,4 +9,8 @@ describe('Header', () => {
     )
     expect(header).toMatchSnapshot()
   })
+
+  it('should render account address', () => {
+    expect(false).toBe(true)
+  })
 })

@@ -9,4 +9,12 @@ describe('Login', () => {
     )
     expect(login).toMatchSnapshot()
   })
+
+  it('should authenticate when address is valid', () => {
+    expect(false).toBe(true)
+  })
+
+  it('should display error when address is invalid or not provided', () => {
+    expect(false).toBe(true)
+  })
 })

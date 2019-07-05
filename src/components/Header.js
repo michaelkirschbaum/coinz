@@ -1,11 +1,12 @@
-import React from 'react'
 /** @jsx jsx */
+import React from 'react'
 import { css, jsx } from '@emotion/core'
 
 const Header = () => (
-  <React.Fragment>
+  <>
     <div>User</div>
     <div>Sign Out</div>
-  </React.Fragment>
+    <button />
+  </>
 );
  export default Header

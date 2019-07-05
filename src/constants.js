@@ -1,1 +1,1 @@
-export const api_url = 'https://jobcoin.gemini.com/customary/api'
+export const api = 'https://jobcoin.gemini.com/customary/api'

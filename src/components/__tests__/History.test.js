@@ -9,4 +9,8 @@ describe('History', () => {
     )
     expect(history).toMatchSnapshot()
   })
+
+  it('should render history', () => {
+    expect(false).toBe(true)
+  })
 })
