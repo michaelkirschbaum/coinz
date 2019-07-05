@@ -10,12 +10,15 @@
     "start": "webpack-dev-server"
   },
   "dependencies": {
+    "@babel/runtime": "^7.5.0",
+    "@emotion/core": "^10.0.14",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
+    "@babel/plugin-transform-runtime": "^7.5.0",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
@@ -28,6 +31,11 @@
     "webpack-dev-server": "^3.7.2"
   },
   "jest": {
-    "setupFilesAfterEnv": ["<rootDir>setupTests.js"]
+    "setupFilesAfterEnv": [
+      "<rootDir>setupTests.js"
+    ],
+    "moduleNameMapper": {
+      "^components(.*)$": "<rootDir>/src/components$1"
+    }
   }
 }
