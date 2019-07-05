@@ -27,7 +27,11 @@ const App = () => (
   <div>
     <Switch>
       <Route path='/login' component={Login} />
-      <ProtectedRoute exact path='/' component={Account} auth={true} />
+      <ProtectedRoute
+        exact path='/'
+        component={Account}
+        auth={true}
+      />
     </Switch>
   </div>
 )

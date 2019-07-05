@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import Account from '../Account'
+import Account from 'components/Account'
 import Send from 'components/Send'
 import History from 'components/History'
 
@@ -8,7 +8,7 @@ describe('Account', () => {
   let account
   beforeEach(() => {
     account = shallow(
-      <Account />,
+      <Account accountID={'Alice'} />,
     )
   })
 
@@ -17,7 +17,7 @@ describe('Account', () => {
   })
 
   it('should render balance', () => {
-    expect(false).toBe(true)
+    expect(account.contains(<div>37.5</div>)).toEqual(true)
   })
 
   it('should update balance', () => {

@@ -1,29 +1,52 @@
 /** @jsx jsx */
-import React, { useState } from 'react'
+import React from 'react'
 import { css, jsx } from '@emotion/core'
 
-const Send = () => {
-  const sendAddress = useState(null)
-  const amount = useState(null)
+class Send extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      address: '',
+      amount: '',
+    }
 
-  return (
-    <div
-      css={css`
-        display: grid;
-      `}
-    >
-      <div>Send Jobcoin</div>
-      <div>
-        Destination Address
-        <input />
+    this.handleChange = this.handleChange.bind(thish)
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
+
+  handleChange(event) {
+    this.setState({
+      address: event.target.address,
+      amount: event.target.amount,
+    })
+  }
+
+  handleSubmit(event) {
+    event.preventDefault()
+  }
+
+  render() {
+    return (
+      <div
+        css={css`
+        
+        `}
+      >
+        <div>Send Jobcoin</div>
+        <form>
+          <label>
+            Destination Address
+            <input type='text' name='address' />
+          </label>
+          <label>
+            Amount
+            <input type='text' name='amout' />
+          </label>
+          <input type='submit' value='Send' />
+        </form>
       </div>
-      <div>
-        Amount
-        <input />
-      </div>
-      <button>Send</button>
-    </div>
-  )
+    )
+  }
 }
 
 export default Send
