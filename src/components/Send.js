@@ -1,18 +1,24 @@
 /** @jsx jsx */
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import PropTypes from 'prop-types'
+import { UserContext } from '../App'
 import { css, jsx } from '@emotion/core'
+import { API_URL } from '../constants'
 
-const API_URL = 'https://jobcoin.gemini.com/customary/api' // TODO: remove
-const route = '/transactions'
-
-const Send = () => {
-  const [sendAddress, setSendAddress] = useState('')
+const Send = ({ balance }) => {
+  const [destinationAddress, setDestinationAddress] = useState('')
   const [amount, setAmount] = useState('')
+  const user = useContext(UserContext)
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
-      const result = await fetch(API_URL, {
+      const result = await fetch(API_URL + '/transactions', {
         method: 'POST',
+        body: {
+          fromAddress: user,
+          toAddress: destinationAddress,
+          amount: amount
+        },
       })
     } catch (error) {
       console.log(error)
@@ -33,7 +39,7 @@ const Send = () => {
           <input
             type='text'
             name='address'
-            onChange={e => setSendAddress(e.target.value)}
+            onChange={e => setDestinationAddress(e.target.value)}
             required
           />
         </label>
@@ -50,6 +56,10 @@ const Send = () => {
       </form>
     </div>
   )
+}
+
+Send.propTypes = {
+  balance: PropTypes.string.isRequired,
 }
 
 export default Send

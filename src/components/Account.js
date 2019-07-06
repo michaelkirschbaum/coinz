@@ -1,23 +1,22 @@
 /** @jsx jsx */
-import React, { useState, useEffect } from 'react'
-import PropTypes from 'prop-types'
+import React, { useState, useEffect, useContext } from 'react'
+import { UserContext } from '../App'
 import Send from 'components/Send'
 import History from 'components/History'
 import { css, jsx } from '@emotion/core'
+import { API_URL } from '../constants'
 
-const API_URL = 'https://jobcoin.gemini.com/customary/api' // TODO: remove
-
-const Account = ({ accountID }) => {
+const Account = () => {
   const [balance, setBalance] = useState('')
   const [error, setError] = useState(false)
-
+  const user = useContext(UserContext)
   useEffect(() => {
     setError(false)
 
     {/* fetch jobcoin balance */}
     const fetchData = async () => {
       try {
-        const result = await fetch(API_URL + '/addresses/' + accountID)
+        const result = await fetch(API_URL + '/addresses/' + user)
         const data = await result.json()
         setBalance(data.balance)
       } catch (error) {
@@ -34,23 +33,15 @@ const Account = ({ accountID }) => {
           display: grid;
         `}
       >
-        <div>Jobcoin Balance</div>
+        <div>Balance</div>
         {error
           ? <div>unable to get balance...</div>
           : <div>{balance}</div>}
       </div>
-      <Send />
-      <History balance={balance} />
+      <Send balance={balance} />
+      <History />
     </>
   )
-}
-
-Account.defaultProps = {
-  accountID: 'Alice',
-}
-
-Account.propTypes = {
-  accountID: PropTypes.string.isRequired,
 }
 
 export default Account

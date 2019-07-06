@@ -22,6 +22,10 @@ describe('Send', () => {
     expect(false).toBe(true)
   })
 
+  it('should display error if unable to retrieve balance', () => {
+    expect(false).toBe(true)
+  })
+
   it('show success when button clicked', () => {
     expect(false).toBe(true)
   })

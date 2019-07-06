@@ -19,7 +19,7 @@ describe('Login', () => {
     expect(false).toBe(true)
   })
 
-  it('should display error when address is not available', () => {
+  it('should display error when address is not present', () => {
     expect(false).toBe(true)
   })
 })
