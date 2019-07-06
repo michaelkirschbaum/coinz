@@ -1,11 +1,9 @@
 /** @jsx jsx */
 import React, { useState, useContext } from 'react'
-import PropTypes from 'prop-types'
 import { UserContext } from '../App'
 import { css, jsx } from '@emotion/core'
-import { API_URL } from '../constants'
 
-const Send = ({ balance }) => {
+const Send = () => {
   const [destinationAddress, setDestinationAddress] = useState('')
   const [amount, setAmount] = useState('')
   const user = useContext(UserContext)
@@ -56,10 +54,6 @@ const Send = ({ balance }) => {
       </form>
     </div>
   )
-}
-
-Send.propTypes = {
-  balance: PropTypes.string.isRequired,
 }
 
 export default Send

@@ -4,7 +4,6 @@ import { UserContext } from '../App'
 import Send from 'components/Send'
 import History from 'components/History'
 import { css, jsx } from '@emotion/core'
-import { API_URL } from '../constants'
 
 const Account = () => {
   const [balance, setBalance] = useState('')
@@ -38,7 +37,7 @@ const Account = () => {
           ? <div>unable to get balance...</div>
           : <div>{balance}</div>}
       </div>
-      <Send balance={balance} />
+      <Send />
       <History />
     </>
   )

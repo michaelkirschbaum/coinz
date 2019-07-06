@@ -24,5 +24,8 @@ module.exports = {
     publicPath: "http://localhost:3000/dist/",
     hot: true
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()]
+  plugins: [
+      new webpack.HotModuleReplacementPlugin(),
+      new webpack.DefinePlugin({ 'API_URL': JSON.stringify(process.env.API_URL) })
+  ]
 };
