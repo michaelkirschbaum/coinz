@@ -25,6 +25,7 @@
     "babel-loader": "^8.0.6",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-to-json": "^3.3.5",
     "react-hot-loader": "^4.12.2",
     "react-test-renderer": "^16.8.6",
     "webpack": "^4.35.2",
@@ -37,6 +38,9 @@
     ],
     "moduleNameMapper": {
       "^components(.*)$": "<rootDir>/src/components$1"
-    }
+    },
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   }
 }
