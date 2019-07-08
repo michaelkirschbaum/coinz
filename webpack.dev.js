@@ -1,5 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
+const merge = require('webpack-merge');
+const common = require('./webpack.common.js');
 
 module.exports = {
   module: {
@@ -22,10 +24,14 @@ module.exports = {
     contentBase: path.join(__dirname, "public/"),
     port: 3000,
     publicPath: "http://localhost:3000/dist/",
-    hot: true
+    hot: true,
+    proxy: {
+      '/api': {
+        target: 'http://jobcoin.gemini.com/customary',
+        secure: false,
+        changeOrigin: true,
+      },
+    },
   },
-  plugins: [
-      new webpack.HotModuleReplacementPlugin(),
-      new webpack.DefinePlugin({ 'API_URL': JSON.stringify(process.env.API_URL) })
-  ]
+  plugins: [new webpack.HotModuleReplacementPlugin()]
 };
