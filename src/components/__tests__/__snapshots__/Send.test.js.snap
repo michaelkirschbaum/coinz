@@ -1,70 +1,52 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Send should match the snapshot 1`] = `
-<EmotionCssPropInternal
-  __EMOTION_LABEL_PLEASE_DO_NOT_USE__="Send"
-  __EMOTION_TYPE_PLEASE_DO_NOT_USE__="div"
-  css={
-    Object {
-      "map": undefined,
-      "name": "x5c8o5",
-      "next": undefined,
-      "styles": "
-        display: grid;
+<Send>
+  <EmotionCssPropInternal
+    __EMOTION_LABEL_PLEASE_DO_NOT_USE__="Send"
+    __EMOTION_TYPE_PLEASE_DO_NOT_USE__="div"
+    css={
+      Object {
+        "map": undefined,
+        "name": "35n4kl",
+        "next": undefined,
+        "styles": "
+
       ",
+      }
     }
-  }
->
-  <div>
-    Send Jobcoin
-  </div>
-  <form
-    onSubmit={[Function]}
   >
-    <label>
-      Destination Address
-      <EmotionCssPropInternal
-        __EMOTION_LABEL_PLEASE_DO_NOT_USE__="Send"
-        __EMOTION_TYPE_PLEASE_DO_NOT_USE__="input"
-        css={
-          Object {
-            "map": undefined,
-            "name": "1e3emxb",
-            "next": undefined,
-            "styles": "
-              border: true ? '' : 1px solid #eb516d;
-            ",
-          }
-        }
-        name="address"
-        onChange={[Function]}
-        type="text"
-      />
-    </label>
-    <label>
-      Amount
-      <EmotionCssPropInternal
-        __EMOTION_LABEL_PLEASE_DO_NOT_USE__="Send"
-        __EMOTION_TYPE_PLEASE_DO_NOT_USE__="input"
-        css={
-          Object {
-            "map": undefined,
-            "name": "1e3emxb",
-            "next": undefined,
-            "styles": "
-              border: true ? '' : 1px solid #eb516d;
-            ",
-          }
-        }
-        name="amout"
-        onChange={[Function]}
-        type="text"
-      />
-    </label>
-    <input
-      type="submit"
-      value="Send"
-    />
-  </form>
-</EmotionCssPropInternal>
+    <div
+      className="css-17v7lnq-Send"
+    >
+      <div>
+        Send Jobcoin
+      </div>
+      <form
+        onSubmit={[Function]}
+      >
+        <label>
+          Destination Address
+          <input
+            name="address"
+            onChange={[Function]}
+            type="text"
+          />
+        </label>
+        <label>
+          Amount
+          <input
+            name="amount"
+            onChange={[Function]}
+            type="text"
+          />
+        </label>
+        <input
+          type="submit"
+          value="Send"
+        />
+      </form>
+    </div>
+  </EmotionCssPropInternal>
+</Send>
 `;

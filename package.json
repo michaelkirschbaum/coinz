@@ -6,12 +6,13 @@
   "license": "MIT",
   "scripts": {
     "test": "jest",
-    "build": "webpack --mode development",
-    "start": "webpack-dev-server"
+    "build": "webpack --config webpack.prod.js",
+    "start": "webpack-dev-server --open --config webpack.dev.js"
   },
   "dependencies": {
     "@babel/runtime": "^7.5.0",
     "@emotion/core": "^10.0.14",
+    "@emotion/styled": "^10.0.14",
     "d3": "^5.9.7",
     "react": "^16.8.6",
     "react-dom": "npm:@hot-loader/react-dom",
@@ -26,11 +27,14 @@
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "enzyme-to-json": "^3.3.5",
+    "file-loader": "^4.0.0",
+    "jest-fetch-mock": "^2.1.2",
     "react-hot-loader": "^4.12.2",
     "react-test-renderer": "^16.8.6",
     "webpack": "^4.35.2",
     "webpack-cli": "^3.3.5",
-    "webpack-dev-server": "^3.7.2"
+    "webpack-dev-server": "^3.7.2",
+    "webpack-merge": "^4.2.1"
   },
   "jest": {
     "setupFilesAfterEnv": [
@@ -41,6 +45,7 @@
     },
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
-    ]
+    ],
+    "clearMocks": true
   }
 }
