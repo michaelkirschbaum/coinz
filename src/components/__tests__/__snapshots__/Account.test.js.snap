@@ -8,10 +8,10 @@ exports[`Account should match the snapshot 1`] = `
     css={
       Object {
         "map": undefined,
-        "name": "1ox8cw8",
+        "name": "y8ucs5",
         "next": undefined,
         "styles": "
-          display: grid;
+
         ",
       }
     }

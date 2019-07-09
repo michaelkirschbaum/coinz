@@ -1,3 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header should match the snapshot 1`] = `ShallowWrapper {}`;
+exports[`Header should match the snapshot 1`] = `
+<EmotionCssPropInternal
+  __EMOTION_LABEL_PLEASE_DO_NOT_USE__="Header"
+  __EMOTION_TYPE_PLEASE_DO_NOT_USE__="div"
+  css={
+    Object {
+      "map": undefined,
+      "name": "1ladu4g",
+      "next": undefined,
+      "styles": "
+    
+    ",
+    }
+  }
+>
+  <div>
+    Alice
+     Signed In
+  </div>
+  <button
+    onClick=""
+  >
+    Sign Out
+  </button>
+</EmotionCssPropInternal>
+`;

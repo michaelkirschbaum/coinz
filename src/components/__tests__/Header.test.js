@@ -3,22 +3,29 @@ import { shallow } from 'enzyme'
 import Header from 'components/Header'
 
 describe('Header', () => {
-  it('should match the snapshot', () => {
-    const header = shallow(
-      <Header />,
+  let header
+  let setUser
+  beforeEach(() => {
+    const context = { user: 'Alice' }
+    setUser = jest.fn().mockImplementation(user => context.user = user)
+    header = shallow(
+      <Header setUser={setUser} />, {
+        context: { context }
+      }
     )
+  })
+
+  it('should match the snapshot', () => {
     expect(header).toMatchSnapshot()
   })
 
   it('should render account address', () => {
-    expect(false).toBe(true)
-  })
-
-  it('should display whether user is signed in', () => {
-    expect(false).toBe(true)
+    expect(header.text()).toContain('Alice')
   })
 
   it('should sign out user when clicked', () => {
-    expect(false).toBe(true)
+    header.find('button').simulate('click')
+    expect(setUser).toHaveBeenCalled()
+    expect(header.context().user).toEqual('')
   })
 })
