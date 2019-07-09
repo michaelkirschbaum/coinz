@@ -17,7 +17,16 @@ describe('Account', () => {
   })
 
   it('should render balance', () => {
-    expect(account.contains(<div>37.5</div>)).toEqual(true)
+    global.fetch = jest.fn().mockImplementationOnce(() => Promise.resolve({
+      json: () => Promise.resolve({ data: { balance: "10" } })
+    }))
+
+    account = shallow(
+      <Account accountID = {'Alice'}/>,
+    )
+    expect(account.text()).toContain('10')
+
+    global.fetch.mockClear()
   })
 
   it('should update balance', () => {
@@ -25,7 +34,16 @@ describe('Account', () => {
   })
 
   it('should show error when balance request fails', () => {
-    expect(false).toBe(true)
+    global.fetch = jest.fn().mockImplementationOnce(() => Promise.reject(
+      new Error('Fetch failed')
+    ))
+
+    account = shallow(
+      <Account accountID = {'Alice'}/>,
+    )
+    expect(account.text()).toContain('unable to get balance')
+
+    global.fetch.mockClear()
   })
 
   it('should render Send widget', () => {

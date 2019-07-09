@@ -107,6 +107,10 @@ describe('Send', () => {
         'Content-Type': 'application/json'
       }
     }
+
+    // should throw error
+    // expect(send).toThrowError("Insufficient Funds")
+
     expect(global.fetch).toHaveBeenCalledWith(api_url, options)
     process.nextTick(() => expect(window.alert).toHaveBeenCalled())
   })
