@@ -1,25 +1,55 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import { mount } from 'enzyme'
 import Login from 'components/Login'
 
 describe('Login', () => {
-  it('should match the snapshot', () => {
-    const login = shallow(
-      <Login />,
+  let login
+  beforeEach(() => {
+    const context = { user: '' }
+    const setUser = jest.fn().mockImplementation(user => {
+      context.user = user
+    })
+    const location = { state: {} }
+
+    login = mount(
+      <Login.WrappedComponent setUser={setUser} location={location} />,
+      { context }
     )
+
+    global.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      json: () => Promise.resolve({})
+    }))
+  })
+
+  afterEach(() => {
+    global.fetch.mockClear()
+  })
+
+  it('should match the snapshot', () => {
     expect(login).toMatchSnapshot()
   })
 
+  it('should display error when address is invalid', () => {
+    const form = login.find('form').first()
+    form.find('input').first().simulate('change', {
+      target: {
+        value: ''
+      }
+    })
+    form.simulate('submit')
+    expect(form.text()).toContain('field must be provided')
+  })
+
   it('should authenticate on click', () => {
-    expect(false).toBe(true)
-  })
+    const form = login.find('form').first()
+    form.find('input').first().simulate('change', {
+      target: {
+        value: 'Alice'
+      }
+    })
+    form.simulate('submit')
+    expect(login.context().user).toEqual('Alice')
 
-  it('should display error when address is not correct format', () => {
-    login.find('form')
-    expect(false).toBe(true)
-  })
-
-  it('should display error when address is not present', () => {
-    expect(false).toBe(true)
+    setUser.mockClear()
   })
 })
