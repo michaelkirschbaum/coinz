@@ -9,10 +9,11 @@ const Header = ({ setUser }) => {
 
   return (
     <div css={css`
-    
+      float: right; 
+      margin-right: 25px;
     `}>
       <div>{user} Signed In</div>
-      <button onClick={setUser('')}>Sign Out</button>
+      <button onClick={() => setUser('')}>Sign Out</button>
     </div>
   )
 }

@@ -7,10 +7,11 @@ exports[`Header should match the snapshot 1`] = `
   css={
     Object {
       "map": undefined,
-      "name": "1ladu4g",
+      "name": "5n91x2",
       "next": undefined,
       "styles": "
-    
+      float: right; 
+      margin-right: 25px;
     ",
     }
   }
@@ -20,7 +21,7 @@ exports[`Header should match the snapshot 1`] = `
      Signed In
   </div>
   <button
-    onClick=""
+    onClick={[Function]}
   >
     Sign Out
   </button>
