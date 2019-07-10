@@ -3,29 +3,8 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 
-module.exports = {
-  module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-          use: {
-            loader: "babel-loader"
-          }
-      },
-      {
-        test: /\.(jpg)$/,
-        use: [
-          "file-loader"
-        ]
-      }
-    ]
-  },
-  resolve: {
-    alias: {
-      components: path.resolve(__dirname, 'src/components/')
-    }
-  },
+module.exports = merge(common, {
+  mode: 'development',
   devServer: {
     contentBase: path.join(__dirname, "public/"),
     port: 3000,
@@ -38,6 +17,5 @@ module.exports = {
         changeOrigin: true,
       },
     },
-  },
-  plugins: [new webpack.HotModuleReplacementPlugin()]
-};
+  }
+});
