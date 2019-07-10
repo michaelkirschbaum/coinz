@@ -7,26 +7,31 @@ exports[`Header should match the snapshot 1`] = `
   css={
     Object {
       "map": undefined,
-      "name": "5n91x2",
+      "name": "r9lhvs",
       "next": undefined,
       "styles": "
-      float: right; 
-      margin-right: 25px;
+      display: flex;
+      justify-content: space-between;
+      height: 40px;
+      line-height: 40px;
+      border-bottom: 1px solid lightgrey;
     ",
     }
   }
 >
-  <img
-    alt="logo"
-  />
   <div>
+    <img
+      alt="logo"
+    />
     Alice
-     Signed In
   </div>
-  <button
-    onClick={[Function]}
-  >
-    Sign Out
-  </button>
+  <div>
+    Signed In
+    <button
+      onClick={[Function]}
+    >
+      Sign Out
+    </button>
+  </div>
 </EmotionCssPropInternal>
 `;

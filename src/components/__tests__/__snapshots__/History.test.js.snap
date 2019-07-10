@@ -6,12 +6,12 @@ exports[`History should match the snapshot 1`] = `
   css={
     Object {
       "map": undefined,
-      "name": "7ym0ve",
+      "name": "r83fgv",
       "next": undefined,
       "styles": "
-        width: 200px;
-        height: 200px;
-        background: lightblue;
+        height: 100vh;
+        width: 100%;
+        border: 1px solid lightgrey;
       ",
     }
   }

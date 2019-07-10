@@ -7,11 +7,12 @@ exports[`Account should match the snapshot 1`] = `
   css={
     Object {
       "map": undefined,
-      "name": "dv3rzl",
+      "name": "17fmsxx",
       "next": undefined,
       "styles": "
       display: flex;
       flex-direction: row;
+      margin: 25px 25px 25px 25px;
     ",
     }
   }
@@ -22,18 +23,36 @@ exports[`Account should match the snapshot 1`] = `
     css={
       Object {
         "map": undefined,
-        "name": "1admyoe",
+        "name": "19yx0jv",
         "next": undefined,
         "styles": "
-        
-        ",
+        width: 300px;
+        margin-right: 25px;
+      ",
       }
     }
   >
-    <div>
-      Balance
-    </div>
-    <div />
+    <EmotionCssPropInternal
+      __EMOTION_LABEL_PLEASE_DO_NOT_USE__="Account"
+      __EMOTION_TYPE_PLEASE_DO_NOT_USE__="div"
+      css={
+        Object {
+          "map": undefined,
+          "name": "qdp69e",
+          "next": undefined,
+          "styles": "
+          border: 1px solid lightgrey;
+          margin-bottom: 10px;
+          padding: 0 10px 0 10px;
+        ",
+        }
+      }
+    >
+      <p>
+        Balance
+      </p>
+      <p />
+    </EmotionCssPropInternal>
     <Send />
   </EmotionCssPropInternal>
   <History />

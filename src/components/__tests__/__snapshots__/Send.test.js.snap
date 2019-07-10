@@ -8,25 +8,28 @@ exports[`Send should match the snapshot 1`] = `
     css={
       Object {
         "map": undefined,
-        "name": "35n4kl",
+        "name": "ycsf5d",
         "next": undefined,
         "styles": "
-
+        padding: 0 10px 0 10px;
+        border: 1px solid lightgrey;
       ",
       }
     }
   >
     <div
-      className="css-17v7lnq-Send"
+      className="css-yezzpp-Send"
     >
-      <div>
+      <p>
         Send Jobcoin
-      </div>
+      </p>
       <form
         onSubmit={[Function]}
       >
         <label>
-          Destination Address
+          <div>
+            Destination Address
+          </div>
           <input
             name="address"
             onChange={[Function]}
@@ -34,17 +37,21 @@ exports[`Send should match the snapshot 1`] = `
           />
         </label>
         <label>
-          Amount
+          <div>
+            Amount
+          </div>
           <input
             name="amount"
             onChange={[Function]}
             type="text"
           />
         </label>
-        <input
-          type="submit"
-          value="Send"
-        />
+        <div>
+          <input
+            type="submit"
+            value="Send"
+          />
+        </div>
       </form>
     </div>
   </EmotionCssPropInternal>
