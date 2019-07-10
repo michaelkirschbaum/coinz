@@ -6,12 +6,14 @@ exports[`History should match the snapshot 1`] = `
   css={
     Object {
       "map": undefined,
-      "name": "0",
+      "name": "7ym0ve",
       "next": undefined,
-      "styles": "",
+      "styles": "
+        width: 200px;
+        height: 200px;
+        background: lightblue;
+      ",
     }
   }
->
-  History
-</EmotionCssPropInternal>
+/>
 `;

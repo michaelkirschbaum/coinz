@@ -1,17 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Account should match the snapshot 1`] = `
-<Fragment>
+<EmotionCssPropInternal
+  __EMOTION_LABEL_PLEASE_DO_NOT_USE__="Account"
+  __EMOTION_TYPE_PLEASE_DO_NOT_USE__="div"
+  css={
+    Object {
+      "map": undefined,
+      "name": "dv3rzl",
+      "next": undefined,
+      "styles": "
+      display: flex;
+      flex-direction: row;
+    ",
+    }
+  }
+>
   <EmotionCssPropInternal
     __EMOTION_LABEL_PLEASE_DO_NOT_USE__="Account"
     __EMOTION_TYPE_PLEASE_DO_NOT_USE__="div"
     css={
       Object {
         "map": undefined,
-        "name": "y8ucs5",
+        "name": "1admyoe",
         "next": undefined,
         "styles": "
-
+        
         ",
       }
     }
@@ -20,8 +34,8 @@ exports[`Account should match the snapshot 1`] = `
       Balance
     </div>
     <div />
+    <Send />
   </EmotionCssPropInternal>
-  <Send />
   <History />
-</Fragment>
+</EmotionCssPropInternal>
 `;

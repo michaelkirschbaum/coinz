@@ -67,13 +67,14 @@ const Send = () => {
   return (
     <div
       css={css`
-
+        padding: 0 10px 0 10px;
+        border: 1px solid lightgrey;
       `}
     >
-      <div>Send Jobcoin</div>
+      <p>Send Jobcoin</p>
       <form onSubmit={handleSubmit}>
         <label>
-          Destination Address
+          <div>Destination Address</div>
           <input
             type='text'
             name='address'
@@ -84,7 +85,7 @@ const Send = () => {
           <Error>{errors.address}</Error>
         }
         <label>
-          Amount
+          <div>Amount</div>
           <input
             type='text'
             name='amount'
@@ -94,7 +95,9 @@ const Send = () => {
         {errors.amount &&
           <Error>{errors.amount}</Error>
         }
-        <input type='submit' value='Send' />
+        <div>
+          <input type='submit' value='Send' />
+        </div>
       </form>
     </div>
   )

@@ -46,7 +46,6 @@ const Login = ({ setUser, location }) => {
   return (
     <div css={css`
       display: grid;
-      text-align: center;
       position: absolute;
       margin: auto;
       top: 0;
@@ -56,8 +55,10 @@ const Login = ({ setUser, location }) => {
       height: 150px;
       width: 200px;
     `}>
-      <img alt='logo' />
-      <div>Welcome to Jobcoin! Sign in using your address.</div>
+      <div css={css`text-align: center;`}>
+        <img alt='logo' />
+        <p>Welcome to Jobcoin! Sign in using your address.</p>
+      </div>
       <form onSubmit={handleSubmit}>
         <label>
           <div>Jobcoin Address</div>

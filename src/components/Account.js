@@ -26,20 +26,29 @@ const Account = () => {
   }, [])
 
   return (
-    <>
-      <div
-        css={css`
-
-        `}
-      >
-        <div>Balance</div>
-        {error
-          ? <div>unable to get balance...</div>
-          : <div>{balance}</div>}
+    <div css={css`
+      display: flex;
+      flex-direction: row;
+      margin: 25px 25px 25px 25px;
+    `}>
+      <div css={css`
+        width: 300px;
+        margin-right: 25px;
+      `}>
+        <div css={css`
+          border: 1px solid lightgrey;
+          margin-bottom: 10px;
+          padding: 0 10px 0 10px;
+        `}>
+          <p>Balance</p>
+          {error
+            ? <p>unable to get balance...</p>
+            : <p>{balance}</p>}
+        </div>
+        <Send />
       </div>
-      <Send />
       <History />
-    </>
+    </div>
   )
 }
 
