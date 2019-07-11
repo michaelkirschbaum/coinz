@@ -56,7 +56,7 @@ const Send = () => {
       const response = await result.json()
 
       if (response.status && response.status === 'OK')
-        alert(response.response)
+        alert('Transaction was successful')
       else if (response.error)
         throw response.error
     } catch (error) {

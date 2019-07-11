@@ -10,4 +10,4 @@
 
 ## deploy
 
-    ...
+    yarn build

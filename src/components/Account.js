@@ -6,7 +6,7 @@ import History from 'components/History'
 import { css, jsx } from '@emotion/core'
 
 const Account = () => {
-  const [balance, setBalance] = useState('')
+  const [data, setData] = useState({})
   const [error, setError] = useState(false)
   const user = useContext(UserContext)
   useEffect(() => {
@@ -17,7 +17,7 @@ const Account = () => {
       try {
         const result = await fetch('/api/addresses/' + user)
         const data = await result.json()
-        setBalance(data.balance)
+        setData(data)
       } catch (error) {
         setError(true)
       }
@@ -43,11 +43,11 @@ const Account = () => {
           <p>Balance</p>
           {error
             ? <p>unable to get balance...</p>
-            : <p>{balance}</p>}
+            : <p>{data.balance}</p>}
         </div>
         <Send />
       </div>
-      <History />
+      <History transactions={data.transactions} />
     </div>
   )
 }

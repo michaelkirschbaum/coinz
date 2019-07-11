@@ -8,9 +8,9 @@ describe('History', () => {
       <History />,
     )
     expect(history).toMatchSnapshot()
-  })
 
-  it('should render graph', () => {
-    expect(false).toBe(true)
+    it('should render chart', () => {
+      expect(false).toBe(true)
+    })
   })
 })

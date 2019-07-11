@@ -2,7 +2,8 @@
 
 exports[`History should match the snapshot 1`] = `
 <EmotionCssPropInternal
-  __EMOTION_TYPE_PLEASE_DO_NOT_USE__="div"
+  __EMOTION_LABEL_PLEASE_DO_NOT_USE__="History"
+  __EMOTION_TYPE_PLEASE_DO_NOT_USE__="svg"
   css={
     Object {
       "map": undefined,

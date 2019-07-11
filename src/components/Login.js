@@ -68,10 +68,10 @@ const Login = ({ setUser, location }) => {
             onChange={e => setAddress(e.target.value)}
           />
         </label>
+        <input type='submit' value='Sign In' />
         {errors.address &&
           <Error>{errors.address}</Error>
         }
-        <input type='submit' value='Sign In' />
       </form>
     </div>
   )
