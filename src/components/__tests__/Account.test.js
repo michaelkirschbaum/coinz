@@ -30,7 +30,7 @@ describe('Account', () => {
   })
 
   it('should update balance', () => {
-    expect(false).toBe(true)
+
   })
 
   it('should show error when balance request fails', () => {

@@ -4,10 +4,10 @@
 
     yarn test
 
+## build
+
+    yarn build
+
 ## run
 
     yarn start
-
-## deploy
-
-    yarn build

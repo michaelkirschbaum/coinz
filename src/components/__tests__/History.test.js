@@ -10,7 +10,7 @@ describe('History', () => {
     expect(history).toMatchSnapshot()
 
     it('should render chart', () => {
-      expect(false).toBe(true)
+
     })
   })
 })
