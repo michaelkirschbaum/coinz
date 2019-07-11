@@ -12,31 +12,33 @@ const History = ({ transactions }) => {
 
   const drawChart = () => {
     const xScale = d3.scaleTime()
-      .domain([
-          new Date(transactions[0].timestamp),
-          new Date(transactions[transactions.length - 1].timestamp)
-      ])
-      .range([0, 820])
+      .domain(d3.extent(transactions, (d) => new Date(d.timestamp)))
+      .range([0, 600])
 
     const yScale = d3.scaleLinear()
       .domain([0, 100])
-      .range([520, 0])
+      .range([300, 0])
 
+    // create graph container
     const svg = d3.select(ref.current)
       .append('g')
       .attr("transform", "translate(" + 20 + "," + 20 + ")");
 
+    // x axis
     svg.append('g')
-      .attr('transform', `translate(0, 520)`)
+      .attr('transform', `translate(0, 300)`)
       .call(d3.axisBottom(xScale))
 
+    // y axis
     svg.append('g')
       .call(d3.axisLeft(yScale))
 
+    // generate line
     const line = d3.line()
       .x(d => xScale(new Date(d.timestamp)))
       .y(d => yScale(d.amount))
 
+    // bind data
     svg.append('path')
       .datum(transactions)
       .style('stroke','black')
@@ -44,6 +46,7 @@ const History = ({ transactions }) => {
       .style('fill', 'none')
       .attr('d', line)
 
+    // add data points
     svg.selectAll('circle')
       .data(transactions)
       .enter()
@@ -59,7 +62,7 @@ const History = ({ transactions }) => {
   return (
     <svg
       css={css`
-        height: 100vh;
+        height: 100%;
         width: 100%;
         border: 1px solid lightgrey;
       `}

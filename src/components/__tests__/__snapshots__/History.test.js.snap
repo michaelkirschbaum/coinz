@@ -7,10 +7,10 @@ exports[`History should match the snapshot 1`] = `
   css={
     Object {
       "map": undefined,
-      "name": "r83fgv",
+      "name": "15lvu08",
       "next": undefined,
       "styles": "
-        height: 100vh;
+        height: 450px;
         width: 100%;
         border: 1px solid lightgrey;
       ",
