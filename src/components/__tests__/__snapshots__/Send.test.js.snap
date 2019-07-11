@@ -8,17 +8,17 @@ exports[`Send should match the snapshot 1`] = `
     css={
       Object {
         "map": undefined,
-        "name": "ycsf5d",
+        "name": "13zrrui",
         "next": undefined,
         "styles": "
-        padding: 0 10px 0 10px;
+        padding: 0 10px 10px 10px;
         border: 1px solid lightgrey;
       ",
       }
     }
   >
     <div
-      className="css-yezzpp-Send"
+      className="css-esbui3-Send"
     >
       <p>
         Send Jobcoin
@@ -30,11 +30,28 @@ exports[`Send should match the snapshot 1`] = `
           <div>
             Destination Address
           </div>
-          <input
+          <EmotionCssPropInternal
+            __EMOTION_LABEL_PLEASE_DO_NOT_USE__="Send"
+            __EMOTION_TYPE_PLEASE_DO_NOT_USE__="input"
+            css={
+              Object {
+                "map": undefined,
+                "name": "al15is",
+                "next": undefined,
+                "styles": "width: 100%;",
+              }
+            }
             name="address"
             onChange={[Function]}
             type="text"
-          />
+          >
+            <input
+              className="css-1uzzbvg-Send"
+              name="address"
+              onChange={[Function]}
+              type="text"
+            />
+          </EmotionCssPropInternal>
         </label>
         <label>
           <div>

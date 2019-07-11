@@ -3,7 +3,7 @@ import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 import { css, jsx } from '@emotion/core'
 import { UserContext } from '../App'
-// import logo from '../../public/logo.jpg'
+import logo from '../../public/logo.jpg'
 
 const Header = ({ setUser }) => {
   const user = useContext(UserContext)
@@ -16,13 +16,15 @@ const Header = ({ setUser }) => {
       line-height: 40px;
       border-bottom: 1px solid lightgrey;
     `}>
-      <div>
-        <img alt='logo' />
+      <div css={css`margin-left: 10px;`}>
+        {/* <img css={css`margin-right: 5px;`} src={logo} alt='logo' /> */}
         {user}
       </div>
       <div>
         Signed In
-        <button onClick={() => setUser('')}>Sign Out</button>
+        <button css={css`margin: 0 10px 0 5px;`} onClick={() => setUser('')}>
+          Sign Out
+        </button>
       </div>
     </div>
   )

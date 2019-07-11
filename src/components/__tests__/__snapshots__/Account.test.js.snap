@@ -48,9 +48,9 @@ exports[`Account should match the snapshot 1`] = `
         }
       }
     >
-      <p>
+      <h4>
         Balance
-      </p>
+      </h4>
       <p />
     </EmotionCssPropInternal>
     <Send />

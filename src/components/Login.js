@@ -4,7 +4,7 @@ import { Redirect, withRouter } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { css, jsx } from '@emotion/core'
 import styled from '@emotion/styled'
-// import logo from '../../public/logo.jpg'
+import logo from '../../public/logo.jpg'
 
 const Error = styled.span`
   color: #eb516d
@@ -45,7 +45,6 @@ const Login = ({ setUser, location }) => {
 
   return (
     <div css={css`
-      display: grid;
       position: absolute;
       margin: auto;
       top: 0;
@@ -56,7 +55,7 @@ const Login = ({ setUser, location }) => {
       width: 200px;
     `}>
       <div css={css`text-align: center;`}>
-        <img alt='logo' />
+        {/* <img src={logo} alt='logo' /> */}
         <p>Welcome to Jobcoin! Sign in using your address.</p>
       </div>
       <form onSubmit={handleSubmit}>

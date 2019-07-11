@@ -40,7 +40,7 @@ const Account = () => {
           margin-bottom: 10px;
           padding: 0 10px 0 10px;
         `}>
-          <p>Balance</p>
+          <h4>Jobcoin Balance</h4>
           {error
             ? <p>unable to get balance...</p>
             : <p>{data.balance}</p>}

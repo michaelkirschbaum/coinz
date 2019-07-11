@@ -62,7 +62,7 @@ const History = ({ transactions }) => {
   return (
     <svg
       css={css`
-        height: 100%;
+        height: 450px;
         width: 100%;
         border: 1px solid lightgrey;
       `}

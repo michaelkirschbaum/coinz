@@ -67,17 +67,19 @@ const Send = () => {
   return (
     <div
       css={css`
-        padding: 0 10px 0 10px;
+        padding: 0 10px 10px 10px;
         border: 1px solid lightgrey;
+        overflow: hidden;
       `}
     >
-      <p>Send Jobcoin</p>
+      <h4>Send Jobcoin</h4>
       <form onSubmit={handleSubmit}>
         <label>
           <div>Destination Address</div>
           <input
             type='text'
             name='address'
+            css={css`width: 100%; box-sizing: border-box;`}
             onChange={e => setDestinationAddress(e.target.value)}
           />
         </label>
@@ -89,13 +91,14 @@ const Send = () => {
           <input
             type='text'
             name='amount'
+            css={css`width: 100%; box-sizing: border-box;`}
             onChange={e => setAmount(e.target.value)}
           />
         </label>
         {errors.amount &&
           <Error>{errors.amount}</Error>
         }
-        <div>
+        <div css={css`margin-top: 5px; float: right;`}>
           <input type='submit' value='Send' />
         </div>
       </form>
