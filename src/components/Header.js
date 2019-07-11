@@ -3,7 +3,7 @@ import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 import { css, jsx } from '@emotion/core'
 import { UserContext } from '../App'
-import logo from '../../public/logo.jpg'
+// import logo from '../../public/logo.jpg'
 
 const Header = ({ setUser }) => {
   const user = useContext(UserContext)

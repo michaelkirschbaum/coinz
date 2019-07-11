@@ -8,21 +8,22 @@ exports[`Send should match the snapshot 1`] = `
     css={
       Object {
         "map": undefined,
-        "name": "13zrrui",
+        "name": "1h62oil",
         "next": undefined,
         "styles": "
         padding: 0 10px 10px 10px;
         border: 1px solid lightgrey;
+        overflow: hidden;
       ",
       }
     }
   >
     <div
-      className="css-esbui3-Send"
+      className="css-meg4kb-Send"
     >
-      <p>
+      <h4>
         Send Jobcoin
-      </p>
+      </h4>
       <form
         onSubmit={[Function]}
       >
@@ -36,9 +37,9 @@ exports[`Send should match the snapshot 1`] = `
             css={
               Object {
                 "map": undefined,
-                "name": "al15is",
+                "name": "yk2vmo",
                 "next": undefined,
-                "styles": "width: 100%;",
+                "styles": "width: 100%; box-sizing: border-box;",
               }
             }
             name="address"
@@ -46,7 +47,7 @@ exports[`Send should match the snapshot 1`] = `
             type="text"
           >
             <input
-              className="css-1uzzbvg-Send"
+              className="css-1o5t9mf-Send"
               name="address"
               onChange={[Function]}
               type="text"
@@ -57,18 +58,50 @@ exports[`Send should match the snapshot 1`] = `
           <div>
             Amount
           </div>
-          <input
+          <EmotionCssPropInternal
+            __EMOTION_LABEL_PLEASE_DO_NOT_USE__="Send"
+            __EMOTION_TYPE_PLEASE_DO_NOT_USE__="input"
+            css={
+              Object {
+                "map": undefined,
+                "name": "yk2vmo",
+                "next": undefined,
+                "styles": "width: 100%; box-sizing: border-box;",
+              }
+            }
             name="amount"
             onChange={[Function]}
             type="text"
-          />
+          >
+            <input
+              className="css-1o5t9mf-Send"
+              name="amount"
+              onChange={[Function]}
+              type="text"
+            />
+          </EmotionCssPropInternal>
         </label>
-        <div>
-          <input
-            type="submit"
-            value="Send"
-          />
-        </div>
+        <EmotionCssPropInternal
+          __EMOTION_LABEL_PLEASE_DO_NOT_USE__="Send"
+          __EMOTION_TYPE_PLEASE_DO_NOT_USE__="div"
+          css={
+            Object {
+              "map": undefined,
+              "name": "khybjw",
+              "next": undefined,
+              "styles": "margin-top: 5px; float: right;",
+            }
+          }
+        >
+          <div
+            className="css-sv49ul-Send"
+          >
+            <input
+              type="submit"
+              value="Send"
+            />
+          </div>
+        </EmotionCssPropInternal>
       </form>
     </div>
   </EmotionCssPropInternal>

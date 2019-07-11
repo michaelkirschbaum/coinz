@@ -19,19 +19,37 @@ exports[`Header should match the snapshot 1`] = `
     }
   }
 >
-  <div>
-    <img
-      alt="logo"
-    />
+  <EmotionCssPropInternal
+    __EMOTION_LABEL_PLEASE_DO_NOT_USE__="Header"
+    __EMOTION_TYPE_PLEASE_DO_NOT_USE__="div"
+    css={
+      Object {
+        "map": undefined,
+        "name": "cl7tym",
+        "next": undefined,
+        "styles": "margin-left: 10px;",
+      }
+    }
+  >
     Alice
-  </div>
+  </EmotionCssPropInternal>
   <div>
     Signed In
-    <button
+    <EmotionCssPropInternal
+      __EMOTION_LABEL_PLEASE_DO_NOT_USE__="Header"
+      __EMOTION_TYPE_PLEASE_DO_NOT_USE__="button"
+      css={
+        Object {
+          "map": undefined,
+          "name": "e1t3ji",
+          "next": undefined,
+          "styles": "margin: 0 10px 0 5px;",
+        }
+      }
       onClick={[Function]}
     >
       Sign Out
-    </button>
+    </EmotionCssPropInternal>
   </div>
 </EmotionCssPropInternal>
 `;

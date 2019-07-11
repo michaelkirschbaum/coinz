@@ -15,10 +15,9 @@ exports[`Login should match the snapshot 1`] = `
     css={
       Object {
         "map": undefined,
-        "name": "365tx5",
+        "name": "1bupfja",
         "next": undefined,
         "styles": "
-      display: grid;
       position: absolute;
       margin: auto;
       top: 0;
@@ -32,7 +31,7 @@ exports[`Login should match the snapshot 1`] = `
     }
   >
     <div
-      className="css-ojvnfv-Login"
+      className="css-1htnn7-Login"
     >
       <EmotionCssPropInternal
         __EMOTION_LABEL_PLEASE_DO_NOT_USE__="Login"
@@ -49,9 +48,6 @@ exports[`Login should match the snapshot 1`] = `
         <div
           className="css-34yy8g-Login"
         >
-          <img
-            alt="logo"
-          />
           <p>
             Welcome to Jobcoin! Sign in using your address.
           </p>

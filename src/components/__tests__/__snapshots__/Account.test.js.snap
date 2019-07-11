@@ -49,7 +49,7 @@ exports[`Account should match the snapshot 1`] = `
       }
     >
       <h4>
-        Balance
+        Jobcoin Balance
       </h4>
       <p />
     </EmotionCssPropInternal>
