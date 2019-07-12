@@ -17,7 +17,6 @@ const Account = () => {
 
   useEffect(() => {
     setError(false)
-    clearInterval(intervalId)
 
     {/* fetch jobcoin balance */}
     const fetchData = async () => {
@@ -32,9 +31,16 @@ const Account = () => {
       }
     }
 
+    fetchData()
+
     // refetch to update balance
-    const id = setInterval(fetchData(), 60000)
+    const id = setInterval(() => fetchData(), 60000)
     setIntervalId(id)
+
+    // cleanup
+    return function cleanup() {
+      clearInterval(intervalId)
+    }
   }, [balance])
 
   return (
@@ -55,7 +61,7 @@ const Account = () => {
           <h4>Jobcoin Balance</h4>
           {error
             ? <p>unable to get balance...</p>
-            : <p>{balance}</p>}
+            : <p>{balance ? parseFloat(balance).toFixed(2) : null}</p>}
         </div>
         <Send deductBalance={deductBalance} />
       </div>
