@@ -11,10 +11,10 @@ describe('App', () => {
   })
 
   it('should render login when not authenticated', () => {
-
+    throw new Error('to do')
   })
 
   it('should sign out user', () => {
-
+    throw new Error('to do')
   })
 })
