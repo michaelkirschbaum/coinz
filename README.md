@@ -10,4 +10,4 @@
 
 ## run
 
-    yarn start
+    yarn && yarn start

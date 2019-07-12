@@ -9,10 +9,12 @@ const History = ({ transactions }) => {
   const ref = useRef(null)
   useEffect(() => {
     if (transactions) {
-      // clear previous
-      d3.selectAll("svg > *").remove();
-
       drawChart()
+
+      return function cleanup() {
+        d3.selectAll('svg > *').remove();
+        d3.selectAll('div.tooltip').remove()
+      }
     }
   })
   const user = useContext(UserContext)
@@ -64,6 +66,19 @@ const History = ({ transactions }) => {
       .style('fill', 'none')
       .attr('d', line)
 
+    // tooltip
+    const div = d3.select('body')
+      .append('div')
+      .attr('class', 'tooltip')
+      .style('position', 'absolute')
+      .style('text-align', 'center')
+      .style('min-width', '60px')
+      .style('height', '30px')
+      .style('font', '10px sans-serif')
+      .style('border-radius', '8px')
+      .style('padding', '2px')
+      .style('background', '#e6e6e6')
+
     // add data points
     svg.selectAll('circle')
       .data(transactions)
@@ -75,6 +90,21 @@ const History = ({ transactions }) => {
       .style('fill', '#EF7293')
       .style('stroke', 'black')
       .style('stroke-width', 1)
+      .on('mouseover', (d) => {
+        div.transition()
+          .duration(500)
+          .style('opacity', 0.9)
+        div.html(`${d.fromAddress ? d.fromAddress === user 
+            ? '- ' + d.amount + '<br/>To: ' + d.toAddress 
+            : '+ ' + d.amount + '<br/>From ' + d.fromAddress : d.amount + '<br/>initial'}`)
+          .style("left", (d3.event.pageX - 30) + "px")
+          .style("top", (d3.event.pageY - 45) + "px");
+      })
+      .on('mouseout', () => {
+        div.transition()
+          .duration(500)
+          .style('opacity', 0)
+      })
   }
 
   return (

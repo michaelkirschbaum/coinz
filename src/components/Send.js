@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import React, { useState, useContext } from 'react'
+import PropTypes from 'prop-types'
 import { UserContext } from '../App'
 import { css, jsx } from '@emotion/core'
 import styled from '@emotion/styled'
@@ -111,6 +112,10 @@ const Send = ({ deductBalance }) => {
       </form>
     </div>
   )
+}
+
+Send.propTypes = {
+  deductBalance: PropTypes.func.isRequired,
 }
 
 export default Send

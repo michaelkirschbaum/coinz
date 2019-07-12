@@ -8,9 +8,5 @@ describe('History', () => {
       <History />,
     )
     expect(history).toMatchSnapshot()
-
-    it('should render chart', () => {
-
-    })
   })
 })
