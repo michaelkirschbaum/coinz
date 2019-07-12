@@ -8,7 +8,7 @@ const Error = styled.span`
   color: #eb516d
 `
 
-const Send = () => {
+const Send = ({ deductBalance }) => {
   const [destinationAddress, setDestinationAddress] = useState('')
   const [amount, setAmount] = useState('')
   const [errors, setErrors] = useState({})
@@ -55,9 +55,14 @@ const Send = () => {
       })
       const response = await result.json()
 
-      if (response.status && response.status === 'OK')
+      if (response.status && response.status === 'OK') {
+        // rerender data
+        deductBalance(amount)
+        setDestinationAddress('')
+        setAmount('')
+
         alert('Transaction was successful')
-      else if (response.error)
+      } else if (response.error)
         throw response.error
     } catch (error) {
       alert(error)
@@ -79,6 +84,7 @@ const Send = () => {
           <input
             type='text'
             name='address'
+            value={destinationAddress}
             css={css`width: 100%; box-sizing: border-box;`}
             onChange={e => setDestinationAddress(e.target.value)}
           />
@@ -91,6 +97,7 @@ const Send = () => {
           <input
             type='text'
             name='amount'
+            value={amount}
             css={css`width: 100%; box-sizing: border-box;`}
             onChange={e => setAmount(e.target.value)}
           />

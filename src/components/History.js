@@ -8,7 +8,12 @@ import { css, jsx } from '@emotion/core'
 const History = ({ transactions }) => {
   const ref = useRef(null)
   useEffect(() => {
-    if (transactions) drawChart()
+    if (transactions) {
+      // clear previous
+      d3.selectAll("svg > *").remove();
+
+      drawChart()
+    }
   })
   const user = useContext(UserContext)
 

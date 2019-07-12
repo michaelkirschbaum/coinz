@@ -45,12 +45,14 @@ exports[`Send should match the snapshot 1`] = `
             name="address"
             onChange={[Function]}
             type="text"
+            value=""
           >
             <input
               className="css-1o5t9mf-Send"
               name="address"
               onChange={[Function]}
               type="text"
+              value=""
             />
           </EmotionCssPropInternal>
         </label>
@@ -72,12 +74,14 @@ exports[`Send should match the snapshot 1`] = `
             name="amount"
             onChange={[Function]}
             type="text"
+            value=""
           >
             <input
               className="css-1o5t9mf-Send"
               name="amount"
               onChange={[Function]}
               type="text"
+              value=""
             />
           </EmotionCssPropInternal>
         </label>

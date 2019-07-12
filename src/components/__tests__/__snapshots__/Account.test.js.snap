@@ -53,8 +53,12 @@ exports[`Account should match the snapshot 1`] = `
       </h4>
       <p />
     </EmotionCssPropInternal>
-    <Send />
+    <Send
+      deductBalance={[Function]}
+    />
   </EmotionCssPropInternal>
-  <History />
+  <History
+    transactions={Array []}
+  />
 </EmotionCssPropInternal>
 `;
