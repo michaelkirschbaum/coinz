@@ -9,6 +9,7 @@ const Account = () => {
   const [balance, setBalance] = useState('')
   const [transactions, setTransactions] = useState([])
   const [error, setError] = useState(false)
+  const [intervalId, setIntervalId] = useState('')
   const user = useContext(UserContext)
   const deductBalance = (amount) => {
     setBalance((parseFloat(balance) - parseFloat(amount)).toString())
@@ -16,6 +17,7 @@ const Account = () => {
 
   useEffect(() => {
     setError(false)
+    clearInterval(intervalId)
 
     {/* fetch jobcoin balance */}
     const fetchData = async () => {
@@ -29,7 +31,10 @@ const Account = () => {
         setError(true)
       }
     }
-    fetchData()
+
+    // refetch to update balance
+    const id = setInterval(fetchData(), 60000)
+    setIntervalId(id)
   }, [balance])
 
   return (
