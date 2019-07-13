@@ -1,41 +1,41 @@
-/** @jsx jsx */
 import React, { useRef, useEffect, useContext } from 'react'
 import * as d3 from 'd3'
 import { UserContext } from '../App'
 import PropTypes from 'prop-types'
-import { css, jsx } from '@emotion/core'
 
 const History = ({ transactions }) => {
   const ref = useRef(null)
   useEffect(() => {
-    if (transactions) {
-      drawChart()
+    if (transactions) drawChart()
 
-      return function cleanup() {
-        d3.selectAll('svg > *').remove();
-        d3.selectAll('div.tooltip').remove()
-      }
+    return function cleanup() {
+      d3.selectAll('svg').remove()
+      d3.selectAll('div.tooltip').remove()
     }
   })
   const user = useContext(UserContext)
 
   const drawChart = () => {
-    const xScale = d3.scaleTime()
-      .domain(d3.extent(transactions, (d) => new Date(d.timestamp)))
-      .range([0, 835.422])
-
-    const yScale = d3.scaleLinear()
-      .domain([0, 100])
-      .range([441, 0])
-
     // create graph container
     const svg = d3.select(ref.current)
+      .append('svg')
+      .attr('width', 800)
+      .attr('height', 500)
+      .style('border', '1px solid lightgrey')
       .append('g')
       .attr("transform", "translate(" + 20 + "," + 20 + ")");
 
+    const xScale = d3.scaleTime()
+        .domain(d3.extent(transactions, (d) => new Date(d.timestamp)))
+        .range([0, ref.current.clientWidth - 45])
+
+    const yScale = d3.scaleLinear()
+        .domain([0, 100])
+        .range([ref.current.clientHeight - 45, 0])
+
     // x axis
     svg.append('g')
-      .attr('transform', `translate(0, 441)`)
+      .attr('transform', `translate(0, ${ref.current.clientHeight - 45})`)
       .call(d3.axisBottom(xScale))
 
     // y axis
@@ -108,14 +108,7 @@ const History = ({ transactions }) => {
   }
 
   return (
-    <svg
-      css={css`
-        height: 100vh;
-        width: 100%;
-        border: 1px solid lightgrey;
-      `}
-      ref={ref}
-    />
+    <div ref={ref} />
   )
 }
 
