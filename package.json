@@ -2,7 +2,7 @@
   "name": "jobcoin",
   "version": "1.0.0",
   "engines": {
-    "node": "11.10.0"
+    "node": "12.6.0"
   },
   "main": "src/index.js",
   "author": "Michael Kirschbaum",
@@ -11,7 +11,7 @@
     "test": "jest",
     "build": "webpack --config webpack.prod.js",
     "dev": "webpack-dev-server --open --config webpack.dev.js",
-    "start": "node server.js",
+    "start": "babel-node server.js",
     "heroku-postbuild": "webpack -p",
     "lint": "eslint src"
   },
