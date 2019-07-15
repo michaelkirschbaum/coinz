@@ -7,7 +7,9 @@
   "scripts": {
     "test": "jest",
     "build": "webpack --config webpack.prod.js",
-    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "dev": "webpack-dev-server --open --config webpack.dev.js",
+    "start": "node server.js",
+    "heroku-postbuild": "webpack -p",
     "lint": "eslint src"
   },
   "dependencies": {
@@ -15,6 +17,7 @@
     "@emotion/core": "^10.0.14",
     "@emotion/styled": "^10.0.14",
     "d3": "^5.9.7",
+    "express": "^4.17.1",
     "react": "^16.8.6",
     "react-dom": "npm:@hot-loader/react-dom",
     "react-router-dom": "^5.0.1"
