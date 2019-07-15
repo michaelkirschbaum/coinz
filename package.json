@@ -1,6 +1,9 @@
 {
   "name": "jobcoin",
   "version": "1.0.0",
+  "engines": {
+    "node": "11.10.0"
+  },
   "main": "src/index.js",
   "author": "Michael Kirschbaum",
   "license": "MIT",
