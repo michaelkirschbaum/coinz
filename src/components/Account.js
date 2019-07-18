@@ -48,6 +48,7 @@ const Account = () => {
       display: flex;
       flex-direction: row;
       margin: 25px 25px 25px 25px;
+      height: 100vh;
     `}>
       <div css={css`
         width: 300px;
