@@ -21,7 +21,7 @@ const Account = () => {
     {/* fetch jobcoin balance */}
     const fetchData = async () => {
       try {
-        const result = await fetch('/api/addresses/' + user)
+        const result = await fetch(API_URL + '/api/addresses/' + user)
         const data = await result.json()
 
         setBalance(data.balance)

@@ -47,7 +47,7 @@ const Send = ({ deductBalance }) => {
     }
     try {
       // send jobcoin
-      const result = await fetch('/api/transactions', {
+      const result = await fetch(API_URL + '/api/transactions', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
