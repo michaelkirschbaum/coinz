@@ -30,7 +30,7 @@ module.exports = {
     new HtmlWebpackPlugin({ template: './public/index.html' }),
     new webpack.DefinePlugin({
       'API_URL': process.env.NODE_ENV === 'production'
-        ? JSON.stringify('http://jobcoin.gemini.com/customary')
+        ? JSON.stringify('https://jobcoin.gemini.com/customary')
         : JSON.stringify('')
     })
   ]
