@@ -47,9 +47,14 @@ const Account = () => {
     <div css={css`
       display: flex;
       flex-direction: row;
-      box-sizing: border-box;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      margin-top: 40px;
       padding: 25px 25px 25px 25px;
-      height: 100%;
+      box-sizing: border-box;
     `}>
       <div css={css`
         width: 300px;
