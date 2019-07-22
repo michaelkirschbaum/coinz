@@ -34,20 +34,18 @@ const App = () => {
 
   return (
     <UserContext.Provider value={user}>
-      <div>
-        {user ? <Header setUser={userHandler} /> : null}
-        <Switch>
-          <Route
-            path='/login'
-            render={(props) => <Login setUser={userHandler} />}
-          />
-          <ProtectedRoute
-            exact path='/'
-            component={Account}
-            auth={user}
-          />
-        </Switch>
-      </div>
+      {user ? <Header setUser={userHandler} /> : null}
+      <Switch>
+        <Route
+          path='/login'
+          render={(props) => <Login setUser={userHandler} />}
+        />
+        <ProtectedRoute
+          exact path='/'
+          component={Account}
+          auth={user}
+        />
+      </Switch>
     </UserContext.Provider>
   )
 }
