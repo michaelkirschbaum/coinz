@@ -1,9 +1,9 @@
 /** @jsx jsx */
 import React, { useState, useEffect, useContext } from 'react'
-import { UserContext } from '../App'
 import Send from 'components/Send'
 import History from 'components/History'
 import { css, jsx } from '@emotion/core'
+import { UserContext } from '../App'
 
 const Account = () => {
   const [balance, setBalance] = useState('')
@@ -47,8 +47,9 @@ const Account = () => {
     <div css={css`
       display: flex;
       flex-direction: row;
-      margin: 25px 25px 25px 25px;
-      height: 100vh;
+      box-sizing: border-box;
+      padding: 25px 25px 25px 25px;
+      height: 100%;
     `}>
       <div css={css`
         width: 300px;
