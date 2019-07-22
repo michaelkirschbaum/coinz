@@ -1,3 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`History should match the snapshot 1`] = `<div />`;
+exports[`History should match the snapshot 1`] = `
+<EmotionCssPropInternal
+  __EMOTION_LABEL_PLEASE_DO_NOT_USE__="History"
+  __EMOTION_TYPE_PLEASE_DO_NOT_USE__="div"
+  css={
+    Object {
+      "map": undefined,
+      "name": "al15is",
+      "next": undefined,
+      "styles": "width: 100%;",
+    }
+  }
+/>
+`;

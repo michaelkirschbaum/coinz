@@ -1,22 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App should match the snapshot 1`] = `
-<ContextProvider
-  value=""
->
-  <div>
-    <Switch>
-      <Route
-        path="/login"
-        render={[Function]}
-      />
-      <ProtectedRoute
-        auth=""
-        component={[Function]}
-        exact={true}
-        path="/"
-      />
-    </Switch>
-  </div>
-</ContextProvider>
+<AppContainer>
+  <App />
+</AppContainer>
 `;
