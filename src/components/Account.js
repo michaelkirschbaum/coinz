@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import Send from 'components/Send'
 import History from 'components/History'
+import axios from 'axios'
 import { css, jsx } from '@emotion/core'
 import { UserContext } from '../App'
 
@@ -21,16 +22,16 @@ const Account = () => {
     {/* fetch jobcoin balance */}
     const fetchData = async () => {
       try {
-        const result = await fetch(API_URL + '/api/addresses/' + user)
-        const data = await result.json()
+        const res = await axios.get(API_URL + '/api/addresses/' + user)
+        const { data } = res
 
-        setBalance(data.balance)
+        // set balance if first render
+        if (!balance) setBalance(data.balance)
         setTransactions(data.transactions)
       } catch (error) {
         setError(true)
       }
     }
-
     fetchData()
 
     // refetch to update balance
