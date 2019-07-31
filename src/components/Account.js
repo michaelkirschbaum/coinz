@@ -1,8 +1,12 @@
 /** @jsx jsx */
-import React, { useState, useEffect, useContext } from 'react'
+import React, {
+  useState,
+  useEffect,
+  useContext
+} from 'react'
+import axios from 'axios'
 import Send from 'components/Send'
 import History from 'components/History'
-import axios from 'axios'
 import { css, jsx } from '@emotion/core'
 import { UserContext } from '../App'
 
@@ -35,11 +39,11 @@ const Account = () => {
     fetchData()
 
     // refetch to update balance
-    const id = setInterval(() => fetchData(), 60000)
+    const refreshInterval = 60000
+    const id = setInterval(() => fetchData(), refreshInterval)
     setIntervalId(id)
 
-    // cleanup
-    return function cleanup() {
+    return () => {
       clearInterval(intervalId)
     }
   }, [balance])

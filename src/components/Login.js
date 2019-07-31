@@ -17,7 +17,6 @@ const Login = ({ setUser, location }) => {
 
   const validate = (address) => {
     let inputErrors = {}
-
     if (!address) inputErrors.address = 'field must be provided'
 
     return inputErrors
@@ -29,6 +28,7 @@ const Login = ({ setUser, location }) => {
     // clear errors
     setErrors({})
 
+    // if error exists, exit submit
     const inputErrors = validate(address)
     if (Object.entries(inputErrors).length) {
       setErrors(inputErrors)
@@ -36,7 +36,9 @@ const Login = ({ setUser, location }) => {
       return
     }
 
+    // set fields
     setUser(address)
+
     setRedirectToReferrer(true)
   }
 
@@ -78,6 +80,9 @@ const Login = ({ setUser, location }) => {
 
 Login.propTypes = {
   setUser: PropTypes.func.isRequired,
+  location: React.PropTypes.shape({
+    pathname: React.PropTypes.string.isRequired,
+  }).isRequired,
 }
 
 export default withRouter(Login)
