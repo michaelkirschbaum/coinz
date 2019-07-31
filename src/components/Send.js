@@ -1,9 +1,10 @@
 /** @jsx jsx */
 import React, { useState, useContext } from 'react'
 import PropTypes from 'prop-types'
-import { UserContext } from '../App'
+import axios from 'axios'
 import { css, jsx } from '@emotion/core'
 import styled from '@emotion/styled'
+import { UserContext } from '../App'
 
 const Error = styled.span`
   color: #eb516d
@@ -15,7 +16,7 @@ const Send = ({ deductBalance }) => {
   const [errors, setErrors] = useState({})
   const user = useContext(UserContext)
 
-  const validate = (address, amount) => {
+  const validateInput = (address, amount) => {
     let inputErrors = {}
 
     if (!address) inputErrors.address = 'field must be provided'
@@ -32,7 +33,7 @@ const Send = ({ deductBalance }) => {
     // clear errors
     setErrors({})
 
-    const inputErrors = validate(destinationAddress, amount)
+    const inputErrors = validateInput(destinationAddress, amount)
     if (Object.entries(inputErrors).length) {
       setErrors(inputErrors)
       alert('Transaction not submitted. Please correct below errors.')
@@ -40,31 +41,26 @@ const Send = ({ deductBalance }) => {
       return
     }
 
-    const body = {
-      fromAddress: user,
-      toAddress: destinationAddress,
-      amount: amount,
-    }
     try {
       // send jobcoin
-      const result = await fetch(API_URL + '/api/transactions', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(body),
+      const res = await axios.post(API_URL + '/api/transactions', {
+        fromAddress: user,
+        toAddress: destinationAddress,
+        amount: amount,
       })
-      const response = await result.json()
+      const { data } = res
 
-      if (response.status && response.status === 'OK') {
+      if (data.status && data.status === 'OK') {
         // rerender data
         deductBalance(amount)
+
+        // clear input
         setDestinationAddress('')
         setAmount('')
 
         alert('Transaction was successful')
-      } else if (response.error)
-        throw response.error
+      } else if (data.error)
+        throw data.error
     } catch (error) {
       alert(error)
     }
