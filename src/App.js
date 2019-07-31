@@ -8,6 +8,7 @@ import { hot } from 'react-hot-loader'
 import Header from 'components/Header'
 import Login from 'components/Login'
 import Account from 'components/Account'
+import PropTypes from 'prop-types'
 
 export const UserContext = React.createContext('Alice')
 
@@ -38,7 +39,7 @@ const App = () => {
       <Switch>
         <Route
           path='/login'
-          render={(props) => <Login setUser={userHandler} />}
+          render={() => <Login setUser={userHandler} />}
         />
         <ProtectedRoute
           exact path='/'
@@ -49,5 +50,7 @@ const App = () => {
     </UserContext.Provider>
   )
 }
+
+ProtectedRoute.propTypes = {}
 
 export default hot(module)(App)

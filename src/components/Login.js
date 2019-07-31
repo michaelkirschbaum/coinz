@@ -80,9 +80,6 @@ const Login = ({ setUser, location }) => {
 
 Login.propTypes = {
   setUser: PropTypes.func.isRequired,
-  location: React.PropTypes.shape({
-    pathname: React.PropTypes.string.isRequired,
-  }).isRequired,
 }
 
 export default withRouter(Login)

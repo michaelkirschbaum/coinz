@@ -1,6 +1,7 @@
 {
     "env": {
         "browser": true,
+        "node": true,
         "es6": true,
         "jest": true
     },
@@ -10,7 +11,8 @@
     ],
     "globals": {
         "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
+        "SharedArrayBuffer": "readonly",
+        "API_URL": true
     },
     "parserOptions": {
         "ecmaFeatures": {
