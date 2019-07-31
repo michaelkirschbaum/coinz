@@ -37,7 +37,6 @@ const Send = ({ deductBalance }) => {
     if (Object.entries(inputErrors).length) {
       setErrors(inputErrors)
       alert('Transaction not submitted. Please correct below errors.')
-
       return
     }
 

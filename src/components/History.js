@@ -39,22 +39,23 @@ const History = ({ transactions }) => {
   const ref = useRef(null)
   const user = useContext(UserContext)
   const windowSize = useWindowSize()
+  const calculateBalance = () => {
+    let balance = 0
+
+    transactions.map((entry) => {
+      if (entry.toAddress === user)
+        balance += parseFloat(entry.amount)
+      else
+        balance -= parseFloat(entry.amount)
+
+      entry.balance = balance
+    })
+  }
 
   useEffect(() => {
-    if (transactions) {
-      // add balance to data
-      let balance = 0
-      transactions.map((entry) => {
-        if (entry.toAddress === user)
-          balance += parseFloat(entry.amount)
-        else
-          balance -= parseFloat(entry.amount)
-
-        entry.balance = balance
-      })
-
-      drawChart()
-    }
+    // TODO: only add balance if receiving new transactions
+    calculateBalance()
+    drawChart()
 
     return () => {
       d3.selectAll('svg').remove()
@@ -63,6 +64,9 @@ const History = ({ transactions }) => {
   }, [windowSize, transactions])
 
   const drawChart = () => {
+    const pointsColor = '#EF7293'
+    const tooltipColor = '#e6e6e6'
+
     // create graph container
     const svg = d3.select(ref.current)
       .append('svg')
@@ -113,7 +117,7 @@ const History = ({ transactions }) => {
       .style('font', '10px sans-serif')
       .style('border-radius', '8px')
       .style('padding', '2px')
-      .style('background', '#e6e6e6')
+      .style('background', tooltipColor)
       .style('opacity', 0)
       .style('left', 0)
       .style('top', 0)
@@ -126,7 +130,7 @@ const History = ({ transactions }) => {
       .attr('cx', d => xScale(new Date(d.timestamp)))
       .attr('cy', d => yScale(d.balance))
       .attr('r', 4)
-      .style('fill', '#EF7293')
+      .style('fill', pointsColor)
       .style('stroke', 'black')
       .style('stroke-width', 1)
       .on('mouseover', (d) => {
@@ -147,10 +151,7 @@ const History = ({ transactions }) => {
   }
 
   return (
-    <div
-      css={css`width: 100%;`}
-      ref={ref}
-    />
+    <div css={css`width: 100%;`} ref={ref}/>
   )
 }
 
