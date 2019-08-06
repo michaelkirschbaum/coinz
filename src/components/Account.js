@@ -7,7 +7,6 @@ import React, {
 import axios from 'axios'
 import Send from 'components/Send'
 import History from 'components/History'
-import axios from 'axios'
 import { css, jsx } from '@emotion/core'
 import { UserContext } from '../App'
 
