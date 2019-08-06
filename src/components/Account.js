@@ -31,7 +31,17 @@ const Account = () => {
 
         // set balance if first render
         if (!balance) setBalance(data.balance)
-        setTransactions(data.transactions)
+
+        // append running balance to data
+        let tempBalance = 0
+        const transactionsWithBalance = data.transactions.map(transaction => ({
+          ...transaction,
+          balance: transaction.toAddress === user
+            ? tempBalance += parseFloat(transaction.amount)
+            : tempBalance -= parseFloat(transaction.amount)
+        }))
+
+        setTransactions(transactionsWithBalance)
       } catch (error) {
         setError(true)
       }

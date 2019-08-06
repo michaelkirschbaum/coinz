@@ -58,11 +58,11 @@ const Login = ({ setUser, location }) => {
     `}>
       <div css={css`text-align: center;`}>
         {/* <img src={logo} alt='logo' /> */}
-        <p>Welcome to Jobcoin! Sign in using your address.</p>
+        <p>Welcome to Coinz! Sign in using your address.</p>
       </div>
       <form onSubmit={handleSubmit}>
         <label>
-          <div>Jobcoin Address</div>
+          <div>Address</div>
           <input
             type='text'
             name='address'

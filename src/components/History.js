@@ -41,18 +41,6 @@ const History = ({ transactions }) => {
   const user = useContext(UserContext)
 
   useEffect(() => {
-    const calculateBalance = () => {
-      let balance = 0
-
-      transactions.map((entry) => {
-        if (entry.toAddress === user)
-          balance += parseFloat(entry.amount)
-        else
-          balance -= parseFloat(entry.amount)
-
-        entry.balance = balance
-      })
-    }
     const drawChart = () => {
       const pointsColor = '#EF7293'
       const tooltipColor = '#e6e6e6'
@@ -139,9 +127,6 @@ const History = ({ transactions }) => {
                 .style('opacity', 0)
           })
     }
-
-    // TODO: only add balance if receiving new transactions
-    calculateBalance()
     drawChart()
 
     return () => {
